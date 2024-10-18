@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  app:
+    container_name: kq-kleinanzeigen
+    image: kq-kleinanzeigen
+    build:
+      context: .
+      dockerfile: ./KQ.Kleinanzeigen.Api/Dockerfile
+    ports:
+      - 8888:8080      
+    depends_on:
+    - mssql
+  mssql:
+    container_name: sql-server
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    restart: always
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "*chickchickwowb00m#"
+    volumes:
+      - my-volume:/var/opt/mssql
+      
+volumes:
+  my-volume:
