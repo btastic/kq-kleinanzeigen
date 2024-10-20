@@ -6,3 +6,10 @@ public enum Friendliness
     VeryFriendly = 1,
     ExceptionallyFriendly = 2
 }
+
+public enum Status
+{
+    Available = 0,
+    Reserved = 1,
+    Deleted = 2
+}

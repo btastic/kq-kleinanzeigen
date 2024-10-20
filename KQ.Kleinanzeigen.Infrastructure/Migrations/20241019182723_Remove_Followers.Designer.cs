@@ -4,6 +4,7 @@ using KQ.Kleinanzeigen.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KQ.Kleinanzeigen.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241019182723_Remove_Followers")]
+    partial class Remove_Followers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,28 +48,21 @@ namespace KQ.Kleinanzeigen.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset>("PostedAt")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18, 6)");
 
                     b.Property<long>("SellerId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("Shipping")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<decimal?>("ShippingCost")
+                        .HasColumnType("decimal(18, 6)");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset?>("UpdatedAt")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<int>("Views")
+                        .HasColumnType("int");
 
                     b.Property<string>("ZipCode")
                         .IsRequired()

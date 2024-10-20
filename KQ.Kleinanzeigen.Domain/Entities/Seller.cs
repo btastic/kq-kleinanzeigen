@@ -12,7 +12,6 @@ public class Seller
         Rating? rating,
         Friendliness? friendliness,
         Reliability? reliability,
-        int followers,
         DateTimeOffset activeSince,
         bool commercialSeller)
     {
@@ -21,7 +20,6 @@ public class Seller
         Rating = rating;
         Friendliness = friendliness;
         Reliability = reliability;
-        Followers = followers;
         ActiveSince = activeSince;
         CommercialSeller = commercialSeller;
     }
@@ -33,9 +31,8 @@ public class Seller
     public Rating? Rating { get; private set; }
     public Friendliness? Friendliness { get; private set; }
     public Reliability? Reliability { get; private set; }
-    public int Followers { get; private set; }
     public DateTimeOffset ActiveSince { get; private set; }
     public bool CommercialSeller { get; private set; }
 
-    public virtual ICollection<Item> Items { get; private set; } = new HashSet<Item>();
+    public virtual ICollection<Item> Items { get; private set; } = [];
 }

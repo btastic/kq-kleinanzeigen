@@ -2,7 +2,16 @@
 
 namespace KQ.Kleinanzeigen.Api.Api.Responses;
 
-public record ItemListingResponse(long Id, string Title, decimal Price, decimal ShippingCost, int Views, string Category);
+public record ItemListingResponse(
+    long Id, 
+    string Title, 
+    decimal Price, 
+    string Shipping, 
+    Status Status, 
+    string Category, 
+    DateTimeOffset PostedAt, 
+    DateTimeOffset CreatedAt,
+    DateTimeOffset? UpdatedAt);
 
 public record ItemDetailsResponse(long Id,
     SellerDetails seller,
@@ -10,18 +19,19 @@ public record ItemDetailsResponse(long Id,
     string Title,
     string Description,
     decimal Price,
-    decimal ShippingCost,
-    int Views,
+    string Shipping,
     string ZipCode,
     string City,
     string Category,
-    DateTimeOffset CreatedAt);
+    Status Status,
+    DateTimeOffset PostedAt,
+    DateTimeOffset CreatedAt,
+    DateTimeOffset? UpdatedAt);
 
 public record SellerDetails(long Id,
     string Name,
     Rating? Rating,
     Friendliness? Friendliness,
     Reliability? Reliability,
-    int Followers,
     DateTimeOffset ActiveSince,
     bool CommercialSeller);

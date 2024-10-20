@@ -2,6 +2,8 @@
 
 namespace KQ.Kleinanzeigen.Api.Api.Requests;
 
+public record UpdateItemRequest(string Title, string Description, decimal Price, Status Status);
+
 public record CreateItemRequest(
     long Id,
     SellerRequest Seller,
@@ -9,12 +11,12 @@ public record CreateItemRequest(
     string Title,
     string Description,
     decimal Price,
-    decimal ShippingCost,
-    int Views,
+    string Shipping,
     string ZipCode,
     string City,
     string Category,
-    DateTimeOffset CreatedAt);
+    Status Status,
+    DateTimeOffset PostedAt);
 
 public record SellerRequest(
     long Id,
@@ -22,6 +24,5 @@ public record SellerRequest(
     Rating? Rating,
     Friendliness? Friendliness,
     Reliability? Reliability,
-    int Followers,
     DateTimeOffset ActiveSince,
     bool CommercialSeller);

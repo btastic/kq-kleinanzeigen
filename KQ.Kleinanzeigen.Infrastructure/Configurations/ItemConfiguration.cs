@@ -13,7 +13,6 @@ public class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.HasMany(p => p.Images).WithOne(k => k.Item).HasForeignKey(p => p.ItemId);
 
         builder.Property(p => p.Price).HasColumnType("decimal(18, 6)");
-        builder.Property(p => p.ShippingCost).HasColumnType("decimal(18, 6)");
 
         builder.HasOne(p => p.Seller).WithMany(p => p.Items).HasForeignKey(p => p.SellerId);
     }
