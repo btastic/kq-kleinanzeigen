@@ -4,5 +4,5 @@ public enum Reliability
 {
     Reliable = 0,
     VeryReliable = 1,
-    ExceptionallyReliable = 2
+    ParticularlyReliable = 2
 }

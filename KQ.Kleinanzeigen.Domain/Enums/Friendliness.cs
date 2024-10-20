@@ -4,7 +4,7 @@ public enum Friendliness
 {
     Friendly = 0,
     VeryFriendly = 1,
-    ExceptionallyFriendly = 2
+    ParticularlyFriendly = 2
 }
 
 public enum Status

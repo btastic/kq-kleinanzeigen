@@ -57,7 +57,7 @@ class Scraper:
             case 'Sehr zuverlässig':
                 return Reliability.VERY_RELIABLE
             case 'Besonders zuverlässig':
-                return Reliability.EXCEPTIONALLY_RELIABLE
+                return Reliability.PARTICULARLY_RELIABLE
 
     def parse_friendliness(self, friendliness_element: WebElement) -> Friendliness:
         """Parses the friendliness element"""
@@ -70,7 +70,7 @@ class Scraper:
             case 'Sehr freundlich':
                 return Friendliness.VERY_FRIENDLY
             case 'Besonders freundlich':
-                return Friendliness.EXCEPTIONALLY_FRIENDLY
+                return Friendliness.PARTICULARLY_FRIENDLY
 
     def parse_date_text(self, text: str) -> datetime:
         """Parses date text to datetime"""
